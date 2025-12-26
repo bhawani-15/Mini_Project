@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Memory Card Game</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="navbar">
+    <button onclick="goHome()">🏠 Home</button>
+    <div>
+        Mode: <b id="navMode">-</b> |
+        Level: <b id="navLevel">-</b> |
+        High Score: <b id="navHighScore">0</b>
+    </div>
+</div>
+
+<div id="homeScreen" class="screen">
+    <h1>🧠 Memory Card Game</h1>
+    <p>Select Mode</p>
+    <div style="display:flex;gap:25px;">
+        <button onclick="setMode('beginner')">Beginner</button>
+        <button class="secondary" onclick="setMode('expert')">Expert</button>
+    </div>
+
+    <div class="progress-container">
+        <p>Overall Progress</p>
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+        <div class="progress-text">
+            Progress: <span id="progressPercent">0%</span>
+        </div>
+    </div>
+</div>
+
+<div id="mapScreen" class="screen" style="display:none">
+    <h2>🗺️ Select Level</h2>
+    <div id="levelMap" class="level-map"></div>
+</div>
+
+<div id="gameUI">
+    <div class="info">
+        <span>Moves: <b id="movesText">0</b></span>
+        <span>Time: <b id="timeText">60</b>s</span>
+        <span>Score: <b id="scoreText">0</b></span>
+    </div>
+
+    <div id="gameGrid" class="game-grid"></div>
+
+    <div class="controls">
+        <button onclick="pauseGame()">Pause</button>
+        <button class="secondary" onclick="restartLevel()">Restart</button>
+    </div>
+</div>
+
+<div id="winScreen" class="screen" style="display:none">
+    <h1>🎉 Level Completed!</h1>
+    <button onclick="nextLevel()">Next Level</button>
+</div>
+
+<div id="loseScreen" class="screen" style="display:none">
+    <h1>❌ Time's Up!</h1>
+    <button class="secondary" onclick="restartLevel()">Restart</button>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
